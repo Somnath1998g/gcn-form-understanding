@@ -191,7 +191,7 @@ class FUNSD(data.Dataset):
             target_am[first_region_word:last_region_word,first_region_word:last_region_word]=1
         
         
-        G = nx.from_numpy_matrix(am)
+        G = nx.DiGraph(am)
         nx.set_node_attributes(G, node_position, 'position')
         nx.set_node_attributes(G, node_text, 'w_embed')
         nx.set_node_attributes(G, node_entity, 'entity')
